@@ -32,6 +32,7 @@ public class PlayerStats : MonoBehaviour
         defText.text = def.ToString();
     }
 
+    
     public void PreviewEquipmentStats(int strength, int def, Sprite itemSprite)
     {
         attackPreText.text = strength.ToString();
@@ -49,5 +50,5 @@ public class PlayerStats : MonoBehaviour
         selectedItemImage.SetActive(false);
         selectedItemStats.SetActive(false);
     }
-
+    
 }

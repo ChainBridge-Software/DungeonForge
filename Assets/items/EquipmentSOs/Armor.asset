@@ -15,4 +15,7 @@ MonoBehaviour:
   itemName: Armor
   strength: 0
   def: 7
+  itemType: 2
   itemSprite: {fileID: -1128947775675819744, guid: cd834bb7a687e1f4bb7fd65bde4d43ac, type: 3}
+  w1: {fileID: -660065713530175220, guid: d5fbc3d625e267c458deea420f9ae981, type: 3}
+  w2: {fileID: -660065713530175220, guid: d5fbc3d625e267c458deea420f9ae981, type: 3}

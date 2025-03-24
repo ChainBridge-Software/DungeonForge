@@ -7,6 +7,7 @@ public class EnemyS : MonoBehaviour
     public int maxHealth = 100;
     int health;
     public HealthBar healthBar;
+    public float speed = 3;
 
     void Start()
     {
@@ -24,6 +25,11 @@ public class EnemyS : MonoBehaviour
         {
             Die();
         }
+    }
+
+    public void SlowDown()
+    {
+        animator.SetFloat("speed", 1);
     }
 
     void Die()

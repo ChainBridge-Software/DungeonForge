@@ -66,6 +66,7 @@ public class EquippedSlot : MonoBehaviour, IPointerClickHandler
             InventoryManager.DeselectAllSlots();
             selectedShader.SetActive(true);
             isSelected = true;
+            
             for (int i = 0; i < equipmentSOLibrary.equipmentSO.Length; i++)
             {
                 if (equipmentSOLibrary.equipmentSO[i].itemName == this.itemName)
@@ -73,6 +74,7 @@ public class EquippedSlot : MonoBehaviour, IPointerClickHandler
                     equipmentSOLibrary.equipmentSO[i].PreviewEquipment();
                 }
             }
+            
         }
 
     }
@@ -82,9 +84,9 @@ public class EquippedSlot : MonoBehaviour, IPointerClickHandler
         UnEquipGear();
     }
 
+    
 
-
-    public void EquipGear(Sprite itemSprite, string itemName, string itemDesc)
+    public void EquipGear(Sprite itemSprite, string itemName, string itemDesc, ItemType type, string slot)
     {
         //if smt is eq-p, unEq it
         if (slotInUse)
@@ -99,13 +101,25 @@ public class EquippedSlot : MonoBehaviour, IPointerClickHandler
         this.itemDesc = itemDesc;
 
         //update playerStats
+        
         for (int i = 0; i < equipmentSOLibrary.equipmentSO.Length; i++)
         {
             if (equipmentSOLibrary.equipmentSO[i].itemName == this.itemName)
             {
+                // MEGNEZNI, H Weapon ability, v armor, EQ anims
+                if (slot == "weapon")
+                {
+                    equipmentSOLibrary.equipmentSO[i].WeaponAnim();
+                    Debug.Log("weapon anim eq");
+                } else if (slot == "ab1" || slot == "ab2" || slot == "ab3"){
+                    Debug.Log("eq anim");
+                    equipmentSOLibrary.equipmentSO[i].AbilityAnim(slot);
+                }
                 equipmentSOLibrary.equipmentSO[i].EquipItem();
             }
         }
+        GameObject.Find("StatManager").GetComponent<PlayerStats>().TurnOffPreviewStats();
+        
 
 
         slotInUse = true;
@@ -126,6 +140,7 @@ public class EquippedSlot : MonoBehaviour, IPointerClickHandler
         slotName.enabled = true;
 
         //update playerStats
+        
         for (int i = 0; i < equipmentSOLibrary.equipmentSO.Length; i++)
         {
             if (equipmentSOLibrary.equipmentSO[i].itemName == this.itemName)
@@ -135,6 +150,7 @@ public class EquippedSlot : MonoBehaviour, IPointerClickHandler
         }
 
         GameObject.Find("StatManager").GetComponent<PlayerStats>().TurnOffPreviewStats();
+        
     }
 
 }

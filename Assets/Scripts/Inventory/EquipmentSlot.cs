@@ -15,6 +15,8 @@ public class EquipmentSlot : MonoBehaviour, IPointerClickHandler
     public Sprite emptySprite;
     public ItemType type;
 
+    
+
 
 
     //slot
@@ -24,7 +26,7 @@ public class EquipmentSlot : MonoBehaviour, IPointerClickHandler
 
     //EQUIPPED SLOT
     [SerializeField]
-    private EquippedSlot armor, W1, W2, Ab1, Ab2, Ab3;
+    private EquippedSlot armor, weapon, Ab1, Ab2, Ab3;
 
     public GameObject selectedShader;
     public bool isSelected;
@@ -76,14 +78,13 @@ public class EquipmentSlot : MonoBehaviour, IPointerClickHandler
             if (isSelected)
             {
                 EquipGear();
-
-
             }
             else
             {
                 inventoryManager.DeselectAllSlots();
                 selectedShader.SetActive(true);
                 isSelected = true;
+                
                 for (int i = 0; i < equipmentSOLibrary.equipmentSO.Length; i++)
                 {
                     if (equipmentSOLibrary.equipmentSO[i].itemName == this.itemName)
@@ -91,14 +92,16 @@ public class EquipmentSlot : MonoBehaviour, IPointerClickHandler
                         equipmentSOLibrary.equipmentSO[i].PreviewEquipment();
                     }
                 }
+                
             }
         }
         else
         {
+            GameObject.Find("StatManager").GetComponent<PlayerStats>().TurnOffPreviewStats();
             inventoryManager.DeselectAllSlots();
             selectedShader.SetActive(true);
             isSelected = true;
-            GameObject.Find("StatManager").GetComponent<PlayerStats>().TurnOffPreviewStats();
+                        
         }
 
         
@@ -110,25 +113,22 @@ public class EquipmentSlot : MonoBehaviour, IPointerClickHandler
     {
         if (type== ItemType.armor)
         {
-            armor.EquipGear(itemSprite, itemName, itemDesc);
+            armor.EquipGear(itemSprite, itemName, itemDesc, type, "armor");
         } else if (type == ItemType.weapon)
         {
-            if(!W1.GetComponent<EquippedSlot>().slotInUse)
-                W1.EquipGear(itemSprite, itemName, itemDesc);
-            else
-                W2.EquipGear(itemSprite, itemName, itemDesc);
-
+            weapon.EquipGear(itemSprite, itemName, itemDesc, type, "weapon");
         } else if (type == ItemType.ability)
         {
             if (!Ab1.GetComponent<EquippedSlot>().slotInUse)
-                Ab1.EquipGear(itemSprite, itemName, itemDesc);
+                Ab1.EquipGear(itemSprite, itemName, itemDesc, type, "ab1");
             else if (!Ab2.GetComponent<EquippedSlot>().slotInUse)
-                Ab2.EquipGear(itemSprite, itemName, itemDesc);
+                Ab2.EquipGear(itemSprite, itemName, itemDesc, type, "ab2");
             else
-                Ab2.EquipGear(itemSprite, itemName, itemDesc);
+                Ab3.EquipGear(itemSprite, itemName, itemDesc, type, "ab3");
         }
 
         EmptySlot();
+        GameObject.Find("StatManager").GetComponent<PlayerStats>().TurnOffPreviewStats();
     }
 
     private void EmptySlot()
