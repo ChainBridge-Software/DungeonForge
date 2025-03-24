@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ca7fcd0da738da4fb205349c5b0951c, type: 3}
+  m_Name: Wink
+  m_EditorClassIdentifier: 
+  itemName: Wink
+  strength: 0
+  def: 0
+  itemType: 3
+  itemSprite: {fileID: -1323697984542352727, guid: c9d626ed7ad69924a82de2904d927694, type: 3}
+  w1: {fileID: 7400000, guid: 787d57232a7ac814eb6d832c9107a1d9, type: 2}
+  w2: {fileID: 0}
+  wAir: {fileID: 0}

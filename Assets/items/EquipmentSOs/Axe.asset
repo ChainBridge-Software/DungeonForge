@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ca7fcd0da738da4fb205349c5b0951c, type: 3}
+  m_Name: Axe
+  m_EditorClassIdentifier: 
+  itemName: Axe
+  strength: 0
+  def: 0
+  itemType: 1
+  itemSprite: {fileID: 6367622954142920128, guid: 553ec4bf38648d74f9be18511dfcee5b, type: 3}
+  w1: {fileID: 7400000, guid: f233bfa0434643744a8d2e66aecdb6d7, type: 2}
+  w2: {fileID: 7400000, guid: 5431340c6d8b02948bee83b1b0733ab4, type: 2}
+  wAir: {fileID: 7400000, guid: 6de4611003090a847a57c0f73c091999, type: 2}
