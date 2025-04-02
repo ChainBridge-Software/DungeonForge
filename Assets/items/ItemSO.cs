@@ -3,7 +3,12 @@ using UnityEngine;
 [CreateAssetMenu]
 public class ItemSO : ScriptableObject
 {
+   [Header("Identification")]
+    public string itemID; // Unique identifier e.g. "health_potion_01"
+    
+    [Header("Properties")]
     public string itemName;
+    
     public StatToChange statToChange = new StatToChange();
     public int amountToChangeStat;
 

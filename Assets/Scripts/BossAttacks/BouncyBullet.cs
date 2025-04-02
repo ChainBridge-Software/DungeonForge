@@ -20,6 +20,9 @@ public class BouncyBullet : MonoBehaviour
     
     private void Start()
     {
+
+        
+
         // Random direction
         if (rb.linearVelocity.magnitude < 0.1f)
         {
@@ -27,9 +30,10 @@ public class BouncyBullet : MonoBehaviour
             Vector2 direction = new Vector2(Mathf.Cos(randomAngle * Mathf.Deg2Rad), Mathf.Sin(randomAngle * Mathf.Deg2Rad));*/
 
             // Look at player
-            /*Vector2 direction = (GameObject.FindWithTag("Player").transform.position - transform.position).normalized;
+            Vector2 direction = (GameObject.FindWithTag("Player").transform.position - transform.position).normalized;
+
             rb.linearVelocity = direction * speed;
-            transform.right = rb.linearVelocity;*/
+            transform.right = rb.linearVelocity;
             
         }
     }
@@ -51,6 +55,9 @@ public class BouncyBullet : MonoBehaviour
     {
         Debug.Log(collision.gameObject.name + " - " + collision.gameObject.layer + " VS Player: " + LayerMask.NameToLayer(playerLayer));
 
+        // If it's another bullet, don't collide
+        
+
         // Check if we hit the player
         if (collision.gameObject.layer == LayerMask.NameToLayer(playerLayer))
         {
@@ -65,11 +72,14 @@ public class BouncyBullet : MonoBehaviour
 
         
         // Calculate bounce
-        if(collision.gameObject.layer == LayerMask.NameToLayer("Wall"))
+        if(collision.gameObject.layer == 7) // 7 is the layer for walls
         {
+            Debug.Log("Bounce");
             var direction = Vector2.Reflect(lastVelocity.normalized, collision.contacts[0].normal);
             rb.linearVelocity = direction.normalized * speed;
         }
+
+    
 
     }
     

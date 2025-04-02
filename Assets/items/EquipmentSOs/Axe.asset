@@ -13,10 +13,14 @@ MonoBehaviour:
   m_Name: Axe
   m_EditorClassIdentifier: 
   itemName: Axe
-  strength: 0
+  strength: 30
   def: 0
+  agility: -10
+  dashHossz: 0
+  invincibility: 0
+  leiras: 
   itemType: 1
-  itemSprite: {fileID: 6367622954142920128, guid: 553ec4bf38648d74f9be18511dfcee5b, type: 3}
+  itemSprite: {fileID: -7617852343188137671, guid: e7fd55698ac215845af25624b8c13909, type: 3}
   w1: {fileID: 7400000, guid: f233bfa0434643744a8d2e66aecdb6d7, type: 2}
   w2: {fileID: 7400000, guid: 5431340c6d8b02948bee83b1b0733ab4, type: 2}
   wAir: {fileID: 7400000, guid: 6de4611003090a847a57c0f73c091999, type: 2}

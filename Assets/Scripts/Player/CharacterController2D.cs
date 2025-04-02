@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class CharacterController2D : MonoBehaviour
+public class CharacterController2D : MonoBehaviour, IDataPersistence
 {
     [SerializeField] private float m_JumpForce = 300f;                          // Amount of force added when the player jumps.
     [Range(0, 1)][SerializeField] private float m_CrouchSpeed = .36f;           // Amount of maxSpeed applied to crouching movement. 1 = 100%
@@ -12,11 +12,13 @@ public class CharacterController2D : MonoBehaviour
     [SerializeField] private Transform m_CeilingCheck;                          // A position marking where to check for ceilings
     [SerializeField] private Collider2D m_CrouchDisableCollider;                // A collider that will be disabled when crouching
 
+    public Transform start;
+
     const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
-    private bool m_Grounded;            // Whether or not the player is grounded.
+    public bool m_Grounded;            // Whether or not the player is grounded.
     const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
     private Rigidbody2D m_Rigidbody2D;
-    private bool m_FacingRight = true;  // For determining which way the player is currently facing.
+    public bool m_FacingRight = true;  // For determining which way the player is currently facing.
     private Vector3 m_Velocity = Vector3.zero;
 
     [Header("Events")]
@@ -29,6 +31,7 @@ public class CharacterController2D : MonoBehaviour
 
     public BoolEvent OnCrouchEvent;
     private bool m_wasCrouching = false;
+    private float onGround = 0;
 
     private void Awake()
     {
@@ -39,6 +42,24 @@ public class CharacterController2D : MonoBehaviour
 
         if (OnCrouchEvent == null)
             OnCrouchEvent = new BoolEvent();
+    }
+
+    public void Start()
+    {
+        // Find Start position
+        start = GameObject.Find("Start").transform;
+
+        // Check if there is a saved player position
+        if (DataPersistenceManager.instance != null && DataPersistenceManager.instance.gameData.player_position != Vector3.zero)
+        {
+            this.transform.position = DataPersistenceManager.instance.gameData.player_position;
+        }
+        else
+        {
+            this.transform.position = start.position;
+        }
+
+        
     }
 
     private void FixedUpdate()
@@ -124,12 +145,16 @@ public class CharacterController2D : MonoBehaviour
                 Flip();
             }
         }
+        if (m_Grounded)
+            onGround += Time.deltaTime;
         // If the player should jump...
-        if (m_Grounded && jump)
+        if (m_Grounded && jump && onGround > 0.22)
         {
+            onGround = 0;
             // Add a vertical force to the player.
             m_Grounded = false;
-            m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+            //m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+            m_Rigidbody2D.linearVelocity = new Vector2(m_Rigidbody2D.linearVelocity.x, m_JumpForce/30);
         }
     }
 
@@ -140,5 +165,29 @@ public class CharacterController2D : MonoBehaviour
         m_FacingRight = !m_FacingRight;
 
         transform.Rotate(0f, 180f, 0f);
+    }
+
+    public void LoadData(GameData data)
+    {
+        // Check if there is a Start position with teleportPlayerOnStart set to true
+        GameObject start = GameObject.Find("Start");
+        /*if (start != null && start.GetComponent<PlayerStart>().teleportPlayerOnStart)
+        {
+            this.transform.position = start.transform.position;
+
+            // Set teleportPlayerOnStart to false
+            start.GetComponent<PlayerStart>().teleportPlayerOnStart = false;
+        }
+        else
+        {
+            this.transform.position = data.player_position;
+        }*/
+
+        this.transform.position = data.player_position;
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        data.player_position = this.transform.position;
     }
 }

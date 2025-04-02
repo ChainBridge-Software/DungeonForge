@@ -13,10 +13,12 @@ public class BossHealth : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        animator.SetTrigger("Damage");
+
+        Debug.Log("taken Dam, "+damage);
+        // animator.SetTrigger("Damage");
         health -= damage;
         healthBar.SetHealth(Mathf.RoundToInt(health));
-        Debug.Log(health);
+         Debug.Log("Boss Health: " + health);
         if (health <= 0)
         {
             Destroy(gameObject);

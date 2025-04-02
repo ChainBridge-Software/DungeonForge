@@ -5,7 +5,7 @@ public class EnemyS : MonoBehaviour
     public Animator animator;
 
     public int maxHealth = 100;
-    int health;
+    public float health;
     public HealthBar healthBar;
     public float speed = 3;
 
@@ -15,7 +15,16 @@ public class EnemyS : MonoBehaviour
         healthBar.SetMaxHealth(maxHealth);
     }
 
-    public void TakeDam(int damage)
+    void Update()
+    {
+        healthBar.SetHealth(health);
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
+    public void TakeDam(float damage)
     {
         animator.SetTrigger("Start");
         health -= damage;

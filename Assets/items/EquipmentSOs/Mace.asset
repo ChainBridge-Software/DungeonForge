@@ -12,11 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ca7fcd0da738da4fb205349c5b0951c, type: 3}
   m_Name: Mace
   m_EditorClassIdentifier: 
+  itemID: 
   itemName: Mace
-  strength: 6
-  def: 0
+  itemSprite: {fileID: -7075773794566752115, guid: 72bb9bf13845abb4099f55ce7b0bc788, type: 3}
+  leiras: 
   itemType: 1
-  itemSprite: {fileID: -1386916552584088779, guid: 605307157515be84a9b7a68cfcd6bed8, type: 3}
+  strength: 18
+  def: 0
+  agility: 0
+  dashHossz: 0
+  invincibility: 0
   w1: {fileID: 7400000, guid: 95f2ac742546d1b4fbb5cf87d3e72b55, type: 2}
   w2: {fileID: 7400000, guid: 34ba3a806b24b014cadb9080f96a8384, type: 2}
   wAir: {fileID: 7400000, guid: a774a46780aeee4439eca0f82cb6307a, type: 2}

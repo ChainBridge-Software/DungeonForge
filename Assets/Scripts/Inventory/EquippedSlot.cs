@@ -8,7 +8,7 @@ public class EquippedSlot : MonoBehaviour, IPointerClickHandler
     //SLOT APPearance
     [SerializeField]
     private Image slotImage;
-
+    public string slotType;
     [SerializeField]
     private TMP_Text slotName;
 
@@ -84,7 +84,6 @@ public class EquippedSlot : MonoBehaviour, IPointerClickHandler
         UnEquipGear();
     }
 
-    
 
     public void EquipGear(Sprite itemSprite, string itemName, string itemDesc, ItemType type, string slot)
     {
@@ -114,6 +113,7 @@ public class EquippedSlot : MonoBehaviour, IPointerClickHandler
                 } else if (slot == "ab1" || slot == "ab2" || slot == "ab3"){
                     Debug.Log("eq anim");
                     equipmentSOLibrary.equipmentSO[i].AbilityAnim(slot);
+
                 }
                 equipmentSOLibrary.equipmentSO[i].EquipItem();
             }
@@ -130,26 +130,32 @@ public class EquippedSlot : MonoBehaviour, IPointerClickHandler
 
     public void UnEquipGear()
     {
-        slotInUse = false;
-        InventoryManager.DeselectAllSlots();
-
-        InventoryManager.AddItem(itemName, 1, itemSprite, itemDesc, type);
-
-        this.itemSprite = emptySprite;
-        slotImage.sprite = itemSprite;
-        slotName.enabled = true;
-
-        //update playerStats
-        
-        for (int i = 0; i < equipmentSOLibrary.equipmentSO.Length; i++)
+        if(slotInUse)
         {
-            if (equipmentSOLibrary.equipmentSO[i].itemName == this.itemName)
+            slotInUse = false;
+            InventoryManager.DeselectAllSlots();
+
+            InventoryManager.AddItem(itemName, 1, itemSprite, itemDesc, type);
+
+            this.itemSprite = emptySprite;
+            slotImage.sprite = itemSprite;
+            slotName.enabled = true;
+
+            //update playerStats
+
+            for (int i = 0; i < equipmentSOLibrary.equipmentSO.Length; i++)
             {
-                equipmentSOLibrary.equipmentSO[i].UnEquipItem();
+                if (equipmentSOLibrary.equipmentSO[i].itemName == this.itemName)
+                {
+                    equipmentSOLibrary.equipmentSO[i].UnEquipItem(slotType);
+                }
             }
+
+            
+
+            GameObject.Find("StatManager").GetComponent<PlayerStats>().TurnOffPreviewStats();
         }
 
-        GameObject.Find("StatManager").GetComponent<PlayerStats>().TurnOffPreviewStats();
         
     }
 

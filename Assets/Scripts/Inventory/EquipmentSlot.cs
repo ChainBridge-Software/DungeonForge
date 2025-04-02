@@ -22,7 +22,7 @@ public class EquipmentSlot : MonoBehaviour, IPointerClickHandler
     //slot
 
     [SerializeField]
-    private Image itemImage;
+    public Image itemImage;
 
     //EQUIPPED SLOT
     [SerializeField]

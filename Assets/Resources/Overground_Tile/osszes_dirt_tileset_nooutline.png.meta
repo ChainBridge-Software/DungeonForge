@@ -1,0 +1,403 @@
+fileFormatVersion: 2
+guid: d01a7b9e6e3c35a47b84f5e4afe67919
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 19718622267611160
+    second: osszes_dirt_tileset_nooutline_0
+  - first:
+      213: -6428676142317973569
+    second: osszes_dirt_tileset_nooutline_1
+  - first:
+      213: -590708052380348189
+    second: osszes_dirt_tileset_nooutline_2
+  - first:
+      213: 5043551824399776785
+    second: osszes_dirt_tileset_nooutline_3
+  - first:
+      213: -1907125302022878664
+    second: osszes_dirt_tileset_nooutline_4
+  - first:
+      213: -984748044924693656
+    second: osszes_dirt_tileset_nooutline_5
+  - first:
+      213: -203512486587676813
+    second: osszes_dirt_tileset_nooutline_6
+  - first:
+      213: -1392812849762166011
+    second: osszes_dirt_tileset_nooutline_7
+  - first:
+      213: -1647301980321814533
+    second: osszes_dirt_tileset_nooutline_8
+  - first:
+      213: -8147305654775806733
+    second: osszes_dirt_tileset_nooutline_9
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: osszes_dirt_tileset_nooutline_0
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 1399
+        width: 482
+        height: 482
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81898b38bfd064000800000000000000
+      internalID: 19718622267611160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: osszes_dirt_tileset_nooutline_1
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 1399
+        width: 802
+        height: 482
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbfcb11fb11c8c6a0800000000000000
+      internalID: -6428676142317973569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: osszes_dirt_tileset_nooutline_2
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 839
+        width: 162
+        height: 482
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e018e3f7226dc7f0800000000000000
+      internalID: -590708052380348189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: osszes_dirt_tileset_nooutline_3
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 999
+        width: 162
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11c3f9399ab4ef540800000000000000
+      internalID: 5043551824399776785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: osszes_dirt_tileset_nooutline_4
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 839
+        width: 802
+        height: 482
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83a44c664a78885e0800000000000000
+      internalID: -1907125302022878664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: osszes_dirt_tileset_nooutline_5
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 279
+        width: 482
+        height: 482
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 863d00dded87552f0800000000000000
+      internalID: -984748044924693656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: osszes_dirt_tileset_nooutline_6
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 429
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 377c591c87afc2df0800000000000000
+      internalID: -203512486587676813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: osszes_dirt_tileset_nooutline_7
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 279
+        width: 482
+        height: 482
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50b9353b71cbbace0800000000000000
+      internalID: -1392812849762166011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: osszes_dirt_tileset_nooutline_8
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 39
+        width: 482
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf7ee11a39b9329e0800000000000000
+      internalID: -1647301980321814533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: osszes_dirt_tileset_nooutline_9
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 39
+        width: 322
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f48e8a5ca4feee80800000000000000
+      internalID: -8147305654775806733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      osszes_dirt_tileset_nooutline_0: 19718622267611160
+      osszes_dirt_tileset_nooutline_1: -6428676142317973569
+      osszes_dirt_tileset_nooutline_2: -590708052380348189
+      osszes_dirt_tileset_nooutline_3: 5043551824399776785
+      osszes_dirt_tileset_nooutline_4: -1907125302022878664
+      osszes_dirt_tileset_nooutline_5: -984748044924693656
+      osszes_dirt_tileset_nooutline_6: -203512486587676813
+      osszes_dirt_tileset_nooutline_7: -1392812849762166011
+      osszes_dirt_tileset_nooutline_8: -1647301980321814533
+      osszes_dirt_tileset_nooutline_9: -8147305654775806733
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

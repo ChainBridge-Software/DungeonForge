@@ -15,8 +15,12 @@ MonoBehaviour:
   itemName: Slime
   strength: 0
   def: 0
+  agility: 0
+  dashHossz: 0
+  invincibility: 0
+  leiras: 
   itemType: 3
-  itemSprite: {fileID: -8611658298892831640, guid: d5fbc3d625e267c458deea420f9ae981, type: 3}
+  itemSprite: {fileID: 1511635504217961359, guid: 81bd966c5feea924097b66d7543c8ea3, type: 3}
   w1: {fileID: 7400000, guid: 7460c6c49d3cf2e468a799db760555b6, type: 2}
   w2: {fileID: 0}
   wAir: {fileID: 0}

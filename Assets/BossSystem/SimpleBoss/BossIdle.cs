@@ -3,6 +3,7 @@ using UnityEngine;
 public class BossIdle : StateMachineBehaviour
 {
     public float distance;
+    public float triggerDist = 5;
     Transform player;
     public Rigidbody2D rb;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
@@ -16,7 +17,7 @@ public class BossIdle : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         distance = Vector2.Distance(player.position, rb.position);
-        if (distance < 5)
+        if (distance < triggerDist)
         {
             animator.SetTrigger("Start");
         }

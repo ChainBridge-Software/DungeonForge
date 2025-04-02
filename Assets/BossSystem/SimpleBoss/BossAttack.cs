@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class BossAttack : MonoBehaviour
 {
-    public int strength = 15;
-    public float attackRange = 2f;
+    public int strength = 60;
+    public float attackRange = 10f;
     public LayerMask attackMask;
 
     public GameObject bubblePrefab;
@@ -13,14 +13,19 @@ public class BossAttack : MonoBehaviour
 
     public void Attack()
     {
+        Debug.Log("Starting Bite attack");
         
         Vector3 pos = transform.position;
-        pos += transform.right * (float)-0.7;
+        pos += transform.right * (float)-3.5;
         pos += transform.up * (float)1.6;
         Collider2D colInfo = Physics2D.OverlapCircle(pos, attackRange, attackMask);
+        
+        // Log collision info
+        Debug.Log("Collision info: " + colInfo);
+
         if (colInfo != null)
         {
-            Debug.Log("hit");
+            Debug.Log("hit " + colInfo.name);
             colInfo.GetComponent<PlayerHealth>().TakeDamage(strength);
             
         }
@@ -28,21 +33,20 @@ public class BossAttack : MonoBehaviour
 
     public void BlowBubble()
     {
+        Debug.Log("Starting Bubble attack");
         Vector3 pos = transform.position;
-        pos += transform.right * 0.7f;
+        pos += transform.right * 3.5f;
         pos += transform.up * (float)1.6;
         GameObject bubble = Instantiate(bubblePrefab, pos, transform.rotation);
-        bubble.GetComponent<BouncyBullet>().maxLifetime = 5f;
-        bubble.GetComponent<BouncyBullet>().speed = 5f;
-        bubble.GetComponent<BouncyBullet>().strength = 10;
-        bubble.GetComponent<BouncyBullet>().playerLayer = "Player";
+
+
         bubble.GetComponent<Rigidbody2D>().linearVelocity = transform.right * bubble.GetComponent<BouncyBullet>().speed;
     }
 
     private void OnDrawGizmosSelected()
     {
         Vector3 pos = transform.position;
-        pos += transform.right * (float)-0.7;
+        pos += transform.right * (float)-3.5;
         pos += transform.up * (float)1.3;
         if (pos == null)
             return;

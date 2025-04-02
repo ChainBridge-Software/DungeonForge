@@ -15,8 +15,12 @@ MonoBehaviour:
   itemName: Wink
   strength: 0
   def: 0
+  agility: 0
+  dashHossz: 0
+  invincibility: 0
+  leiras: 
   itemType: 3
-  itemSprite: {fileID: -1323697984542352727, guid: c9d626ed7ad69924a82de2904d927694, type: 3}
+  itemSprite: {fileID: -199298475762089837, guid: 9405314a69f8232458d0881befb08266, type: 3}
   w1: {fileID: 7400000, guid: 787d57232a7ac814eb6d832c9107a1d9, type: 2}
   w2: {fileID: 0}
   wAir: {fileID: 0}

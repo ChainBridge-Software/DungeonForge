@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class InventoryS : MonoBehaviour
 {
-    public GameObject InventoryMenu;
+    //public GameObject InventoryMenu;
     public GameObject EquipmentMenu;
 
     public ItemSlot[] itemSlot;
@@ -21,9 +21,11 @@ public class InventoryS : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        InventoryMenu.SetActive(false);
+        //InventoryMenu.SetActive(false);
         EquipmentMenu.SetActive(false);
             
+        // Turn off mouse cursor
+        Cursor.lockState = CursorLockMode.Locked;
         
     }
 
@@ -34,13 +36,13 @@ public class InventoryS : MonoBehaviour
     void Update()
     {
 
-        inventoryOpen = inputManager.GetBooleanTriggered("InventoryMenu");
+        //inventoryOpen = inputManager.GetBooleanTriggered("InventoryMenu");
         equipmentOpen = inputManager.GetBooleanTriggered("EquipmentMenu");
 
-        if (inventoryOpen)
+        /*if (inventoryOpen)
         {
             Inventory();
-        }
+        }*/
             
 
         if (equipmentOpen)
@@ -56,18 +58,24 @@ public class InventoryS : MonoBehaviour
         if (EquipmentMenu.activeSelf)
         {
             Time.timeScale = 1;
-            InventoryMenu.SetActive(false);
+            //InventoryMenu.SetActive(false);
             EquipmentMenu.SetActive(false);
+
+            // Turn off mouse cursor
+            Cursor.lockState = CursorLockMode.Locked;
         }
         else
         {
             Time.timeScale = 0;
-            InventoryMenu.SetActive(false);
+            //InventoryMenu.SetActive(false);
             EquipmentMenu.SetActive(true);
+
+            // Turn on mouse cursor
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 
-    void Inventory()
+    /*void Inventory()
     {
         if (InventoryMenu.activeSelf)
         {
@@ -81,7 +89,7 @@ public class InventoryS : MonoBehaviour
             InventoryMenu.SetActive(true);
             EquipmentMenu.SetActive(false);
         }
-    }
+    }*/
 
     public int AddItem(string itemName, int quantity, Sprite itemSprite, string itemDesc, ItemType type)
     {
@@ -148,6 +156,8 @@ public class InventoryS : MonoBehaviour
         }
 
     }
+
+
 }
 
 public enum ItemType

@@ -1,18 +1,23 @@
 using System.Xml.Serialization;
+using TMPro;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "EquipmentSO", menuName = "Scriptable Objects/EquipmentSO")]
 public class EquipmentSO : ScriptableObject
 {
-    public string itemName;
-    public int strength, def;
-
-    [SerializeField]
-    ItemType itemType;
+    [Header("Identification")]
+    public string itemID; // Unique identifier e.g. "iron_sword_01"
     
-    [SerializeField]
-    private Sprite itemSprite;
+    [Header("Visuals")]
+    public string itemName;
+    public Sprite itemSprite;
+    public string leiras;
+    public ItemType itemType;
 
+    
+    [Header("Stats")]
+    public int strength, def, agility, dashHossz;
+    public bool invincibility;
 
     [SerializeField]
     private AnimationClip w1, w2, wAir;
@@ -20,7 +25,7 @@ public class EquipmentSO : ScriptableObject
     public void PreviewEquipment()
     {
         GameObject.Find("StatManager").GetComponent<PlayerStats>().
-            PreviewEquipmentStats(strength, def, itemSprite);
+            PreviewEquipmentStats(strength, def, agility, itemSprite, leiras);
     }
 
     public void EquipItem()
@@ -28,16 +33,32 @@ public class EquipmentSO : ScriptableObject
         PlayerStats playerStats = GameObject.Find("StatManager").GetComponent<PlayerStats>();
         playerStats.strength += strength;
         playerStats.def += def;
+        playerStats.agility += agility;
+        playerStats.dashHossz += dashHossz;
+        if (!playerStats.invincibleDash)
+            playerStats.invincibleDash = invincibility;
         playerStats.UpdateEquipmentStats();
     }
 
-    public void UnEquipItem()
+    public void UnEquipItem(string slot)
     {
         PlayerStats playerStats = GameObject.Find("StatManager").GetComponent<PlayerStats>();
         playerStats.strength -= strength;
         playerStats.def -= def;
+        playerStats.agility -= agility;
+        playerStats.dashHossz -= dashHossz;
         playerStats.UpdateEquipmentStats();
-        GameObject.Find("AnimationOverrideManager").GetComponent<AnimatorOverrider>().UnEquipWeaponAnim(itemType);
+
+        if (slot == "Armor")
+            playerStats.invincibleDash = false;
+        if (slot == "Weapon")
+            GameObject.Find("AnimationOverrideManager").GetComponent<AnimatorOverrider>().UnEquipWeaponAnim(itemType);
+        else if (slot == "ab1")
+            GameObject.Find("AnimationOverrideManager").GetComponent<AnimatorOverrider>().UnEquipAbility1Anim();
+        else if (slot == "ab2")
+            GameObject.Find("AnimationOverrideManager").GetComponent<AnimatorOverrider>().UnEquipAbility2Anim();
+        else if (slot == "ab3")
+            GameObject.Find("AnimationOverrideManager").GetComponent<AnimatorOverrider>().UnEquipAbility3Anim();
     }
     public void WeaponAnim()
     {

@@ -17,10 +17,16 @@ public class PauseMenu : MonoBehaviour
             if(gamePaused)
             {
                 Resume();
+
+                // Turn off mouse cursor
+                Cursor.lockState = CursorLockMode.Locked;
             }
             else
             {
                 Pause();
+
+                // Turn on mouse cursor
+                Cursor.lockState = CursorLockMode.None;
             }
         }
     }
@@ -43,7 +49,7 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         gamePaused = false;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void QuitGame()
