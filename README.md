@@ -1,5 +1,7 @@
 # DungeonForge
 
+DEMO LINK: https://chainbridge.itch.io/dungeonforge
+
 <p>DungeonForge is a platforming bullet-hell game set in a seemingly innocent medieval town.</p>
 <p>This is the first prototype of a much bigger project!<br>In this demo the following things work:</p>
 <ul>
